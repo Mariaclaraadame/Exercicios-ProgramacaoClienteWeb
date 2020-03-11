@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "UTF-8">
+		<script>
+			function CalcPrimo()
+			{
+				var n=document.getElementById("numero").value;
+				var divisor=0;
+				var resposta;
+				for(i=1;i<=n;i++)
+				{
+					if(n%i==0) 
+						divisor++;
+				}
+				if(divisor==2)
+					resposta= "é um número primo.";
+				else
+					resposta= "não é um número primo.";
+				document.getElementById("result").innerHTML= +n+ " " +resposta;
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="result"></h1> 
+		<input type="number" id="numero"/>
+		<button onclick="CalcPrimo()">Executar</button>
+	</body>
+</html>
