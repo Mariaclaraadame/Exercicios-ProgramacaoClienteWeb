@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "utf-8">
+		<script>
+			function TenisPolar()
+			{
+				var palavra= document.getElementById("palavra").value;
+				palavra= palavra.toLowerCase();
+				document.getElementById("result").innerHTML+= "Palavra original: "+palavra;
+				var tenis= "tenis";
+				var polar= "polar";
+				var idx1=0;
+				var idx2=0;
+				var letra= palavra.split('');
+				for(i=0; i<palavra.length; i++)
+				{
+					idx1= tenis.indexOf(letra[i]);
+					idx2= polar.indexOf(letra[i]);
+					console.log("-----", i);
+					console.log("-----", letra);
+					if(idx1!=-1)
+					{
+						letra[i] = polar.charAt(idx1);
+					}
+					else if(idx2!=-1)
+					{
+						letra[i] = tenis.charAt(idx2);
+					}
+					else
+						console.log("Letra mantida-->", letra);
+				}
+				letra = letra.join('');
+				document.getElementById("result").innerHTML+="</br>Palavra final: "+letra;
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id= "result"></h1>
+		<input type= "text" id= "palavra">
+		<button type= "submit" onclick="TenisPolar()">Criptografar</button>
+	</body>
+</html>

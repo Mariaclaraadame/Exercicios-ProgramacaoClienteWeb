@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "utf-8">
+		<script>
+			function InverteFrase()
+			{
+				var palavra = document.getElementById('palavra').value;
+				document.getElementById('result').innerHTML+= "Frase original: "+palavra;
+				var vetor = palavra.split(' ');
+				console.log("Antes do reverse: ", vetor);
+				vetor.reverse();
+				console.log("Depois do reverse: ", vetor);
+				palavra = vetor.join(' ');
+				document.getElementById('result').innerHTML+= "</br>Frase final: "+palavra;
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="result"></h1>
+		<input type="text" id="palavra">
+		<button type="submit" onclick="InverteFrase()">Inverter</button>
+	</body>
+</html>

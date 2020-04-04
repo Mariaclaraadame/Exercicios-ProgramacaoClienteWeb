@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "UTF-8">
+		<script>
+			function MMC()
+			{
+				var n1=document.getElementById("numero1").value;
+				var n2=document.getElementById("numero2").value;
+				var x=n1;
+				var y=n2;
+				var resposta, resto;
+				while(resto!=0)
+				{
+					resto=x%y;
+					x=y;
+					y=resto;
+				}
+				resposta=(n1*n2)/x;
+				document.getElementById("result").innerHTML= "O MMC de "+n1+ " e de "+n2+" é " +resposta;
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="result"></h1> 
+		<input type="number" id="numero1"/>
+		<input type="number" id="numero2"/>
+		<button onclick="MMC()">Calcular</button>
+	</body>
+</html>

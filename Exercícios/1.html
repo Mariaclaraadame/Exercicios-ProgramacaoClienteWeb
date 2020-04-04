@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "UTF-8">
+		<script>
+			function fatorial()
+			{
+				var n=document.getElementById("numero").value;
+				var resposta=1;
+				for(i=n; i>1; i--)
+				{
+					resposta= resposta*i;
+				}
+				document.getElementById("result").innerHTML= "O fatorial de "+n+ " é " +resposta;
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="result"></h1> 
+		<input type="number" id="numero"/>
+		<button onclick="fatorial()">Calcular</button>
+	</body>
+</html>
